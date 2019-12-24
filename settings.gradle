@@ -1,2 +1,4 @@
-include ':app'
+include ':app', ':easymodule1', ':easymodule2'
 rootProject.name='EasyGradle'
+
+project(':app').projectDir = new File('./app')//指定子模块app的位置
