@@ -1,0 +1,33 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+}
+
+repositories {
+    mavenLocal()
+    google()
+    jcenter()
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.version = '0.0.1'
+        pom.artifactId = 'myplugin'
+        pom.groupId = 'com.zy.plugin'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.5.3'
+}
+
